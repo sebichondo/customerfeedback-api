@@ -1,0 +1,14 @@
+[2017-09-28 21:03:40] slim-app.INFO: 3 [] {"uid":"a9b546d"}
+[2017-09-28 21:03:59] slim-app.INFO: 4 [] {"uid":"46db010"}
+[2017-09-28 21:05:27] slim-app.INFO: Creating table if it doesn't exist. [] {"uid":"f50d6a0"}
+[2017-09-28 21:05:33] slim-app.INFO: Creating table if it doesn't exist. [] {"uid":"a2eb698"}
+[2017-09-28 21:05:41] slim-app.INFO: 3 [] {"uid":"59a1edf"}
+[2017-09-28 21:06:22] slim-app.INFO: Creating table if it doesn't exist. [] {"uid":"dd2ee57"}
+[2017-09-28 21:06:52] slim-app.INFO: Empty name or email [] {"uid":"e9ba9a6"}
+[2017-09-28 21:06:56] slim-app.INFO: Empty name or email [] {"uid":"247329c"}
+[2017-09-28 21:07:04] slim-app.INFO: 3 [] {"uid":"d7b91e2"}
+[2017-09-28 21:07:12] slim-app.INFO: 0 [] {"uid":"b6b77d7"}
+[2017-09-28 21:07:22] slim-app.INFO: 0 [] {"uid":"7698ff4"}
+[2017-09-28 21:07:32] slim-app.INFO: Creating table if it doesn't exist. [] {"uid":"86e2439"}
+[2017-09-28 21:08:56] slim-app.INFO: Creating table if it doesn't exist. [] {"uid":"2ee7dac"}
+[2017-09-28 21:10:38] slim-app.INFO: 3 [] {"uid":"3e375bc"}

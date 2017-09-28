@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Customer CRM API</title>
+        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <style>
+            body {
+                margin: 50px 0 0 0;
+                padding: 0;
+                width: 100%;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                text-align: center;
+                color: #aaa;
+                font-size: 18px;
+            }
+
+            h1 {
+                color: #719e40;
+                letter-spacing: -3px;
+                font-family: 'Lato', sans-serif;
+                font-size: 100px;
+                font-weight: 200;
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Congratulations</h1>
+        <div>if you're seeing a list of customers below, your connection to MySQL is successful</div>
+
+        <?php if (isset($customers) && count($customers)>0) : ?>
+        <ul>
+        <?php foreach($customers as $key=>$customer): ?>
+            <li><?php echo htmlspecialchars($customer['name']) ?> - <?php echo htmlspecialchars($customer['email']) ?></li>
+        <?php endforeach; ?>
+        </ul>
+        <form action="/customers" method="post">
+            Name: <input type="text" name="name"> E-mail: <input type="text" name="email"><input type="submit">
+        </form>
+
+        <?php else: ?>
+            <p>No customers in the database. You may need to <a href="/init">init</a>.</p>
+        <?php endif; ?>
+
+        <h2>API endpoints</h2>
+        <ul>
+            <li>Get customers: <a href="/api/customers">/api/customers</a></li>
+            <li>Get customer by email: <a href="/api/customers/jane.doe@email.com">/api/customers/jane.doe@email.com</a></li>
+        </ul>
+
+        <h2>Web endpoints</h2>
+        <ul>
+            <li>Init: <a href="/init">/init</a></li>
+            <li>Truncate: <a href="/truncate">/truncate</a></li>
+        </ul>
+    </body>
+</html>
