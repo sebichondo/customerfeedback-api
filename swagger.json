@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "title": "Customers CRM"
   },
-  "basePath": "/api",
+  "basePath": "/",
   "tags": [
     {
       "name": "customers",
@@ -17,7 +17,7 @@
     "https"
   ],
   "paths": {
-    "/customers": {
+    "/api/customers": {
       "get": {
         "tags": [
           "customers"
@@ -38,7 +38,7 @@
         }
       }
     },
-    "/customers/[email]": {
+    "/api/customers/[email]": {
       "get": {
         "tags": [
           "customers"
@@ -52,7 +52,7 @@
         "parameters": [
           {
             "name": "email",
-            "in": "query",
+            "in": "path",
             "description": "Email of the customer to search for",
             "required": true,
             "type": "string"
