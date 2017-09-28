@@ -13,7 +13,8 @@
     }
   ],
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/customers": {
