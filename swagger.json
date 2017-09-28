@@ -1,0 +1,97 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample legacy API for a fictional CRM.",
+    "version": "1.0.0",
+    "title": "Customers CRM"
+  },
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "customers",
+      "description": "Gets all customers"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/customers": {
+      "get": {
+        "tags": [
+          "customers"
+        ],
+        "summary": "Get all customers",
+        "description": "",
+        "operationId": "getCustomers",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        }
+      }
+    },
+    "/customers/[email]": {
+      "get": {
+        "tags": [
+          "customers"
+        ],
+        "summary": "Gets customer by email",
+        "description": "",
+        "operationId": "getCustomerByEmail",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "description": "Email of the customer to search for",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Customer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Customer": {
+      "type": "object",
+      "required": [
+        "name",
+        "email"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string",
+          "example": "Jane Smith"
+        },
+        "email": {
+          "type": "string",
+          "example": "jane.smith@email.com"
+        }
+      }
+    }
+  }
+}

@@ -58,26 +58,6 @@ $app->get('/', function (Request $request, Response $response, array $args) {
     ]);
 });
 
-$app->get('/api/customers[/{email}]', function (Request $request, Response $response, $args) {
-    if(!isset($args['email'])) {
-        // Get all customers
-        $sth = $this->db->prepare("SELECT * FROM customers ORDER BY id");
-        $sth->execute();
-        $customers = $sth->fetchAll();
-        
-        return $this->response->withJson($customers);
-    }
-    else {
-        // Get customer by email
-        $sth = $this->db->prepare("SELECT * FROM customers WHERE email=:email ORDER BY id");
-        $sth->bindParam("email", $args['email']);
-        $sth->execute();
-        $customers = $sth->fetchAll();
-        
-        return $this->response->withJson($customers);
-    }
-});
-
 $app->post('/customers', function (Request $request, Response $response, $args) {
     $body = $request->getParsedBody();
     
@@ -101,3 +81,23 @@ $app->post('/customers', function (Request $request, Response $response, $args) 
     // Redirect to index
     return $response->withRedirect('/');
 });
+
+$app->get('/api/customers', function (Request $request, Response $response, $args) {
+    // Get all customers
+    $sth = $this->db->prepare("SELECT * FROM customers ORDER BY id");
+    $sth->execute();
+    $customers = $sth->fetchAll();
+    
+    return $this->response->withJson($customers);
+});
+
+$app->get('/api/customers/{email}', function (Request $request, Response $response, $args) {
+    // Get customer by email
+    $sth = $this->db->prepare("SELECT * FROM customers WHERE email=:email ORDER BY id");
+    $sth->bindParam("email", $args['email']);
+    $sth->execute();
+    $customers = $sth->fetchAll();
+    
+    return $this->response->withJson($customers);
+});
+
