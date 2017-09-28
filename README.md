@@ -1,2 +1,2 @@
 # customerfeedback-api
-Legacy PHP+MySQL API to read customer information from a fictional CRM.
+Legacy PHP + MySQL API written in Slim framework to read customer information from a fictional CRM.
