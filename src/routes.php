@@ -96,7 +96,7 @@ $app->get('/api/customers/{email}', function (Request $request, Response $respon
     $sth = $this->db->prepare("SELECT * FROM customers WHERE email=:email ORDER BY id");
     $sth->bindParam("email", $args['email']);
     $sth->execute();
-    $customers = $sth->fetchAll();
+    $customers = $sth->fetch();
     
     return $this->response->withJson($customers);
 });
