@@ -38,7 +38,7 @@
         }
       }
     },
-    "/api/customers/[email]": {
+    "/api/customers/{email}": {
       "get": {
         "tags": [
           "customers"
